@@ -1,6 +1,6 @@
 #pragma once
 #include "Button.h""
-class Botch : Button
+class Botch :public Button
 {
 public:
 	Botch(BasicInput* input, Vector2 positon);

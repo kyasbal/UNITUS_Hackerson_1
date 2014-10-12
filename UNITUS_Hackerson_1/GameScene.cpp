@@ -17,6 +17,7 @@ void GameScene::init()
 	this->Drawables.push_back(reaZyu);
 	beginTime = GetNowCount();
 	backgroundHandle = LoadGraph(".\\Resource\\img\\BackGround.png");
+	this->Drawables.push_back(new Botch(input, Vector2(100, 100)));
 }
 void GameScene::update()
 {
