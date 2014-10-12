@@ -18,6 +18,7 @@ void GameScene::init()
 	beginTime = GetNowCount();
 	backgroundHandle = LoadGraph(".\\Resource\\img\\BackGround.png");
 	this->Drawables.push_back(new Botch(input, Vector2(100, 100)));
+	this->Drawables.push_back(new Woman(input, Vector2(500, 200), &this->Botchs));
 }
 void GameScene::update()
 {
