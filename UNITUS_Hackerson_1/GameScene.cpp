@@ -25,18 +25,19 @@ void GameScene::update()
 	//ŠÔ‚ÌXV
 	time = GetNowCount();
 	timeFromBegin = time - beginTime;
-	//•”ˆÊ‚²‚Æ‚Ì”wŒiF‚Ì•`‰æ
-	DrawBox(1000, 0, 1280, 720, GetColor(200, 200, 200), TRUE);
 	DrawExtendGraph(0, 0, 1000, 720, backgroundHandle, TRUE);
 	//Drawables‚Ì•`‰æ
 	for (std::list<DrawableBase*>::iterator itr = this->Drawables.begin(); itr != this->Drawables.end(); itr++)
 	{
+		if (!(*itr)->isVisible)continue;
 		(*itr)->update();
 	}
 	for (std::list<DrawableBase*>::iterator itr = this->Drawables.begin(); itr != this->Drawables.end(); itr++)
 	{
+		if (!(*itr)->isVisible)continue;
 		(*itr)->draw();
 	}
+	DrawBox(1000, 0, 1280, 720, GetColor(200, 200, 200), TRUE);
 	//Timer‚Ì•`‰æ
 	drawTimerString();
 	//Botch¶¬
@@ -46,7 +47,7 @@ void GameScene::update()
 		Botchs.push_back(*botch);
 		Drawables.push_back(botch);
 	}
-	//Woman‚Ì¶¬
+	//Woman‚Ì¶¬\
 	{
 		if (GetNowCount() - lastWomanSpawn > 1000)
 		{
@@ -55,15 +56,15 @@ void GameScene::update()
 			int m = (int)timefromBegin / 60;
 			timefromBegin -= m * 60;
 			int s = (int)timefromBegin;
-			Woman *woman = new Woman(gameModes,input, Vector2(475 + 100 * cos(s), 310 + sin(s)), &Botchs);
+			Woman *woman = new Woman(gameModes,input, Vector2(475 + 500 * cos(s), 310 + 500 * sin(s)), &Botchs);
 			{
 				Drawables.push_back(woman);
 			}
 			lastWomanSpawn = GetNowCount();
 		}
-
 	}
-}
+
+
 
 void GameScene::drawTimerString(){
 	float timefromBegin = this->timeFromBegin;

@@ -16,7 +16,7 @@ Woman::~Woman()
 void Woman::update()
 {
 	elapsedTime = GetNowCount() - beginTime;
-	if (elapsedTime > 50000)
+	if (elapsedTime > 20000)
 	{
 		this->isVisible = false;
 	}

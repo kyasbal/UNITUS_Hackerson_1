@@ -20,6 +20,7 @@ void OverScene::init()
 
 void OverScene::update()
 {
+	LoadGraphScreen(0, 0, ".\\Resource\\img\\Iwanna.jpg", FALSE);
 	if ((input->clickInput & MOUSE_INPUT_LEFT) != 0){
 		//StopSoundFile();
 		SetBackgroundColor(230, 230, 230);
