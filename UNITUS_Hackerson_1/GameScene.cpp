@@ -14,7 +14,9 @@ GameScene::~GameScene()
 void GameScene::init()
 {
 	ReaZyu *reaZyu = new ReaZyu(input, Vector2(375, 310));
+	this->Drawables.push_back(reaZyu);
 	beginTime = GetNowCount();
+	backgroundHandle = LoadGraph(".\\Resource\\img\\BackGround.png");
 }
 void GameScene::update()
 {
@@ -22,8 +24,8 @@ void GameScene::update()
 	time = GetNowCount();
 	timeFromBegin = time - beginTime;
 	//ïîà Ç≤Ç∆ÇÃîwåiêFÇÃï`âÊ
-	DrawBox(1000, 0, 1280, 720, GetColor(0, 255, 255), TRUE);
-	DrawBox(0, 0, 1000, 720, GetColor(0, 0, 0), TRUE);
+	DrawBox(1000, 0, 1280, 720, GetColor(200,200,200), TRUE);
+	DrawExtendGraph(0, 0, 1000, 720, backgroundHandle, TRUE);
 	//DrawablesÇÃï`âÊ
 	for (std::list<DrawableBase*>::iterator itr = this->Drawables.begin(); itr != this->Drawables.end(); itr++)
 	{
@@ -43,6 +45,7 @@ void GameScene::drawTimerString(){
 	int m=(int)timefromBegin / 60;
 	timefromBegin -= m * 60;
 	int s =(int) timefromBegin;
-	DrawFormatString(800, 700, GetColor(0, 255, 0), "%d:%d", m, s);
+	SetFontSize(30);
+	DrawFormatString(800, 680, GetColor(0, 255, 0), "%d:%d", m, s);
 }
 

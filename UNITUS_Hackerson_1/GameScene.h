@@ -24,4 +24,5 @@ private:
 	std::list<Sweats> Sweats;
 	std::list<CharaButton> CharaButtons;
 	void drawTimerString();
+	int backgroundHandle;
 };
