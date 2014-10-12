@@ -18,7 +18,7 @@ void GameScene::init()
 	beginTime = GetNowCount();
 	backgroundHandle = LoadGraph(".\\Resource\\img\\BackGround.png");
 	this->Drawables.push_back(new Botch(input, Vector2(100, 100)));
-	this->Drawables.push_back(new Woman(input, Vector2(500, 200), &this->Botchs));
+	this->Drawables.push_back(new Woman(gameModes,input, Vector2(500, 200), &this->Botchs));
 }
 void GameScene::update()
 {
@@ -55,7 +55,7 @@ void GameScene::update()
 		int m = (int)timefromBegin / 60;
 		timefromBegin -= m * 60;
 		int s = (int)timefromBegin;
-		Woman *woman = new Woman(input, Vector2(475+ 100 * cos(s), 310 + 100 * sin(s)),&this->Botchs);
+		Woman *woman = new Woman(gameModes,input, Vector2(475+ 100 * cos(s), 310 + 100 * sin(s)),&this->Botchs);
 		Womans.push_back(*woman);
 		Drawables.push_back(woman);
 	}

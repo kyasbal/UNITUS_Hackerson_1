@@ -1,7 +1,8 @@
 #include "Woman.h"
 #include <list>
-Woman::Woman(BasicInput* input, Vector2 position,std::list<Botch>* botchs) :Button(input, position, Vector2(50, 50), ".\\Resource\\img\\Woman.png")
+Woman::Woman(GameModes* gamemodes,BasicInput* input, Vector2 position,std::list<Botch>* botchs) :Button(input, position, Vector2(50, 50), ".\\Resource\\img\\Woman.png")
 {
+	this->gamemodes = gamemodes;
 	this->botches = botchs;
 	beginTime = GetNowCount();
 }
@@ -15,7 +16,7 @@ Woman::~Woman()
 void Woman::update()
 {
 	elapsedTime = GetNowCount() - beginTime;
-	if (elapsedTime > 5000)
+	if (elapsedTime > 50000)
 	{
 		this->isVisible = false;
 	}
@@ -24,7 +25,7 @@ void Woman::update()
 	target -= this->getPosition();
 	if (target.length() < 1)
 	{
-		//TODO ゲームオーバー処理
+		gamemodes->sceneMode = 2;
 	}
 	target *= (1.0/target.length());
 	Vector2 newPos = this->getPosition() - target;
