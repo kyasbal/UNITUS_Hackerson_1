@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="ソース ファイル\Button子クラス">
+      <UniqueIdentifier>{5a8a723f-d6eb-4d0e-87b3-15839724396d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -45,20 +48,20 @@
     <ClCompile Include="DrawableBase.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
+    <ClCompile Include="Botch.cpp">
+      <Filter>ソース ファイル\Button子クラス</Filter>
+    </ClCompile>
     <ClCompile Include="CharaButton.cpp">
-      <Filter>ソース ファイル</Filter>
+      <Filter>ソース ファイル\Button子クラス</Filter>
     </ClCompile>
-    <ClCompile Include="Reazyu.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="Sweats.cpp">
-      <Filter>ソース ファイル</Filter>
+    <ClCompile Include="ReaZyu.cpp">
+      <Filter>ソース ファイル\Button子クラス</Filter>
     </ClCompile>
     <ClCompile Include="Woman.cpp">
-      <Filter>ソース ファイル</Filter>
+      <Filter>ソース ファイル\Button子クラス</Filter>
     </ClCompile>
-    <ClCompile Include="Botch.cpp">
-      <Filter>ソース ファイル</Filter>
+    <ClCompile Include="Sweats.cpp">
+      <Filter>ソース ファイル\Button子クラス</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -86,9 +89,6 @@
     <ClInclude Include="DrawableBase.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="Botch.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
     <ClInclude Include="CharaButton.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
@@ -99,6 +99,9 @@
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
     <ClInclude Include="Woman.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Botch.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
   </ItemGroup>

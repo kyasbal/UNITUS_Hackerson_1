@@ -94,7 +94,7 @@
     <ClCompile Include="GameScene.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="MenuScene.cpp" />
-    <ClCompile Include="Reazyu.cpp" />
+    <ClCompile Include="ReaZyu.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="Sweats.cpp" />
     <ClCompile Include="Vector2.cpp" />

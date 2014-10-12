@@ -1,6 +1,5 @@
 #include "Scene.h"
 
-
 Scene::Scene(GameModes* gameModes, BasicInput* input)
 {
 	this->gameModes = gameModes;
