@@ -13,7 +13,7 @@ GameScene::~GameScene()
 }
 void GameScene::init()
 {
-	ReaZyu *reaZyu = new ReaZyu(input, Vector2(375, 310));
+	reaZyu = new ReaZyu(input, Vector2(375, 310));
 	beginTime = GetNowCount();
 }
 void GameScene::update()
@@ -23,7 +23,7 @@ void GameScene::update()
 	timeFromBegin = time - beginTime;
 	//ïîà Ç≤Ç∆ÇÃîwåiêFÇÃï`âÊ
 	DrawBox(1000, 0, 1280, 720, GetColor(0, 255, 255), TRUE);
-	DrawBox(0, 0, 1000, 720, GetColor(0, 0, 0), TRUE);
+	DrawBox(0, 0, 1000, 720, GetColor(200, 200, 200), TRUE);
 	//DrawablesÇÃï`âÊ
 	for (std::list<DrawableBase*>::iterator itr = this->Drawables.begin(); itr != this->Drawables.end(); itr++)
 	{
@@ -35,6 +35,12 @@ void GameScene::update()
 	}
 	//TimerÇÃï`âÊ
 	drawTimerString();
+	//ReaZyuÇÃê∂ê¨
+
+	//WomanÇÃê∂ê¨
+	//BotchÇÃê∂ê¨
+	//SweatsÇÃê∂ê¨
+	
 }
 
 void GameScene::drawTimerString(){
@@ -44,5 +50,6 @@ void GameScene::drawTimerString(){
 	timefromBegin -= m * 60;
 	int s =(int) timefromBegin;
 	DrawFormatString(800, 700, GetColor(0, 255, 0), "%d:%d", m, s);
+	reaZyu->draw();
 }
 
