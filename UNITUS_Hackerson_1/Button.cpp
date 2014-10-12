@@ -6,7 +6,7 @@ Button::Button(BasicInput* input, Vector2 position, Vector2 graphPx, TCHAR* Grap
 {
 	this->input = input;
 	this->Top = position;
-	this->Botom = position + graphPx;
+	this->Bottom = position + graphPx;
 	this->GraphName = GraphName;
 }
 
