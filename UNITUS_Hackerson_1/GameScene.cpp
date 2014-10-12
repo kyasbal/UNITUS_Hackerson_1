@@ -31,10 +31,12 @@ void GameScene::update()
 	//Drawables‚Ì•`‰æ
 	for (std::list<DrawableBase*>::iterator itr = this->Drawables.begin(); itr != this->Drawables.end(); itr++)
 	{
+		if (!((*itr)->isVisible))continue;
 		(*itr)->update();
 	}
 	for (std::list<DrawableBase*>::iterator itr = this->Drawables.begin(); itr != this->Drawables.end(); itr++)
 	{
+		if (!((*itr)->isVisible))continue;
 		(*itr)->draw();
 	}
 	//Timer‚Ì•`‰æ
@@ -53,7 +55,7 @@ void GameScene::update()
 		int m = (int)timefromBegin / 60;
 		timefromBegin -= m * 60;
 		int s = (int)timefromBegin;
-		Woman *woman = new Woman(input, Vector2(475+ 100 * cos(s), 310 + 100 * sin(s)));
+		Woman *woman = new Woman(input, Vector2(475+ 100 * cos(s), 310 + 100 * sin(s)),&this->Botchs);
 		Womans.push_back(*woman);
 		Drawables.push_back(woman);
 	}

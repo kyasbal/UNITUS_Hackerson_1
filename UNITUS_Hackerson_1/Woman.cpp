@@ -3,15 +3,23 @@
 Woman::Woman(BasicInput* input, Vector2 position,std::list<Botch>* botchs) :Button(input, position, Vector2(50, 50), ".\\Resource\\img\\Woman.png")
 {
 	this->botches = botchs;
+	beginTime = GetNowCount();
 }
 
 
 Woman::~Woman()
 {
+	
 }
 
 void Woman::update()
 {
+	elapsedTime = GetNowCount() - beginTime;
+	if (elapsedTime > 5000)
+	{
+		this->isVisible = false;
+	}
+	if (!isVisible)return;
 	Vector2 target = Vector2(500,335);
 	target -= this->getPosition();
 	if (target.length() < 1)
@@ -23,6 +31,7 @@ void Woman::update()
 	for (std::list<Botch>::iterator itr = this->botches->begin(); itr != this->botches->end(); itr++)
 	{
 		Botch b = *itr;
+		if (!b.isVisible)continue;
 		Vector2 dist =  b.getPosition()-newPos;
 		if (dist.length() < 100)
 		{
