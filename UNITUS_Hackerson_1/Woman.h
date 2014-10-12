@@ -11,5 +11,7 @@ public:
 	void update();
 	void afterDraw();
 private:
+	long beginTime;
+	long elapsedTime;
 	std::list<Botch>* botches;
 };

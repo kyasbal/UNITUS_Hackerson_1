@@ -7,5 +7,6 @@ public:
 	virtual void draw();
 	virtual void update();
 	int layer;
+	bool isVisible = true;
 };
 

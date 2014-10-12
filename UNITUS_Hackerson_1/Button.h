@@ -18,5 +18,7 @@ public:
 	BasicInput* input;
 	Vector2 getPosition();
 	void setPosition(Vector2 pos);
+	long beginTime;
+	long elapsedTime;
 };
 
