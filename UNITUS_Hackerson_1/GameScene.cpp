@@ -31,12 +31,10 @@ void GameScene::update()
 	//Drawables‚Ì•`‰æ
 	for (std::list<DrawableBase*>::iterator itr = this->Drawables.begin(); itr != this->Drawables.end(); itr++)
 	{
-		if (!((*itr)->isVisible))continue;
 		(*itr)->update();
 	}
 	for (std::list<DrawableBase*>::iterator itr = this->Drawables.begin(); itr != this->Drawables.end(); itr++)
 	{
-		if (!((*itr)->isVisible))continue;
 		(*itr)->draw();
 	}
 	//Timer‚Ì•`‰æ
@@ -50,16 +48,21 @@ void GameScene::update()
 	}
 	//Woman‚Ì¶¬
 	{
-		float timefromBegin = this->timeFromBegin;
-		timefromBegin /= 1000;
-		int m = (int)timefromBegin / 60;
-		timefromBegin -= m * 60;
-		int s = (int)timefromBegin;
-		Woman *woman = new Woman(gameModes,input, Vector2(475+ 100 * cos(s), 310 + 100 * sin(s)),&this->Botchs);
-		Womans.push_back(*woman);
-		Drawables.push_back(woman);
-	}
+		if (GetNowCount() - lastWomanSpawn > 1000)
+		{
+			float timefromBegin = this->timeFromBegin;
+			timefromBegin /= 1000;
+			int m = (int)timefromBegin / 60;
+			timefromBegin -= m * 60;
+			int s = (int)timefromBegin;
+			Woman *woman = new Woman(gameModes,input, Vector2(475 + 100 * cos(s), 310 + sin(s)), &Botchs);
+			{
+				Drawables.push_back(woman);
+			}
+			lastWomanSpawn = GetNowCount();
+		}
 
+	}
 }
 
 void GameScene::drawTimerString(){
