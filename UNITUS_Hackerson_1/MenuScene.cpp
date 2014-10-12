@@ -26,7 +26,7 @@ void MenuScene::init()
 
 void MenuScene::update()
 {
-	LoadGraphScreen(0, 0, ".\\Resource\\img\\BackGround.png", FALSE);
+	LoadGraphScreen(0, 0, ".\\Resource\\img\\Win7.png", FALSE);
 	LoadGraphScreen(20, 500, ".\\Resource\\img\\logo.bmp", TRUE);
 	//SetFontSize(50);
 	//SetFontThickness(9);
