@@ -4,7 +4,7 @@ class ReaZyu :
 	public Button
 {
 public:
-	ReaZyu(BasicInput* input, Vector2 positon);
+	ReaZyu(BasicInput* input);
 	~ReaZyu();
 	void update();
 	void afterDraw();
