@@ -1,3 +1,4 @@
+#pragma once
 #include "Scene.h"
 #include "Woman.h"
 #include "ReaZyu.h"
