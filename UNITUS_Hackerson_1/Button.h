@@ -17,5 +17,6 @@ public:
 	BasicInput* input;
 protected:
 	Vector2 getPosition();
+	void setPosition(Vector2 pos);
 };
 

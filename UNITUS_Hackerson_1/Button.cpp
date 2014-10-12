@@ -24,3 +24,10 @@ Vector2 Button::getPosition()
 {
 	return (this->Bottom + this->Top)*0.5f;
 }
+
+void Button::setPosition(Vector2 pos)
+{
+	Vector2 substracted = getPosition() - pos;
+	this->Top += substracted;
+	this->Bottom += substracted;
+}
