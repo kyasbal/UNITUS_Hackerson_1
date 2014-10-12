@@ -1,7 +1,7 @@
 #include "GameScene.h"
 
 
-GameScene::GameScene(GameModes* gameMode, BasicInput* input): Scene(gameMode, input)
+GameScene::GameScene(GameModes* gameMode, BasicInput* input) : Scene(gameMode, input)
 {
 	init();
 }
@@ -9,11 +9,11 @@ GameScene::GameScene(GameModes* gameMode, BasicInput* input): Scene(gameMode, in
 
 GameScene::~GameScene()
 {
-	
+
 }
 void GameScene::init()
 {
-	ReaZyu *reaZyu = new ReaZyu(input, Vector2(375, 310));
+	ReaZyu *reaZyu = new ReaZyu(input);
 	this->Drawables.push_back(reaZyu);
 	beginTime = GetNowCount();
 	backgroundHandle = LoadGraph(".\\Resource\\img\\BackGround.png");
@@ -24,7 +24,7 @@ void GameScene::update()
 	time = GetNowCount();
 	timeFromBegin = time - beginTime;
 	//ïîà Ç≤Ç∆ÇÃîwåiêFÇÃï`âÊ
-	DrawBox(1000, 0, 1280, 720, GetColor(200,200,200), TRUE);
+	DrawBox(1000, 0, 1280, 720, GetColor(200, 200, 200), TRUE);
 	DrawExtendGraph(0, 0, 1000, 720, backgroundHandle, TRUE);
 	//DrawablesÇÃï`âÊ
 	for (std::list<DrawableBase*>::iterator itr = this->Drawables.begin(); itr != this->Drawables.end(); itr++)
@@ -37,14 +37,33 @@ void GameScene::update()
 	}
 	//TimerÇÃï`âÊ
 	drawTimerString();
+	//Botchê∂ê¨
+	if (input->clickInput &  MOUSE_INPUT_LEFT != 0)
+	{
+		Botch *botch = new Botch(input, input->mouse);
+		Botchs.push_back(*botch);
+		Drawables.push_back(botch);
+	}
+	//WomanÇÃê∂ê¨
+	{
+		float timefromBegin = this->timeFromBegin;
+		timefromBegin /= 1000;
+		int m = (int)timefromBegin / 60;
+		timefromBegin -= m * 60;
+		int s = (int)timefromBegin;
+		Woman *woman = new Woman(input, Vector2(475+ 100 * cos(s), 310 + 100 * sin(s)));
+		Womans.push_back(*woman);
+		Drawables.push_back(woman);
+	}
+
 }
 
 void GameScene::drawTimerString(){
 	float timefromBegin = this->timeFromBegin;
 	timefromBegin /= 1000;
-	int m=(int)timefromBegin / 60;
+	int m = (int)timefromBegin / 60;
 	timefromBegin -= m * 60;
-	int s =(int) timefromBegin;
+	int s = (int)timefromBegin;
 	SetFontSize(30);
 	DrawFormatString(800, 680, GetColor(0, 255, 0), "%d:%d", m, s);
 }
