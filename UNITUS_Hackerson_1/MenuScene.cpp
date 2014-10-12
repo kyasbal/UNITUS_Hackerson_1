@@ -28,7 +28,9 @@ void MenuScene::update()
 {
 	LoadGraphScreen(0, 0, ".\\Resource\\img\\Win7.png", FALSE);
 	LoadGraphScreen(20, 500, ".\\Resource\\img\\logo.bmp", TRUE);
-	PlaySoundFile(".\\Resource\\BGM\\ŒÎ‚Ì‚Ù‚Æ‚è‚Å•—‚ğŠ´‚¶‚é“I‚ÈBGM.mp3", DX_PLAYTYPE_LOOP);
+	if (CheckSoundFile()==0){
+		PlaySoundFile(".\\Resource\\BGM\\ŒÎ‚Ì‚Ù‚Æ‚è‚Å•—‚ğŠ´‚¶‚é“I‚ÈBGM.mp3", DX_PLAYTYPE_LOOP);
+	}
 	//SetFontSize(50);
 	//SetFontThickness(9);
 	//DrawFormatString(600, 600, GetColor(255, 255, 0), "ƒŠƒA[–o–Å‘åìí");
