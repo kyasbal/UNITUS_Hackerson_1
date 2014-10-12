@@ -14,12 +14,14 @@ public:
 	~GameScene();
 	void init();
 	void update();
+	float time;
+	float timeFromBegin;
+	float beginTime;
 private:
 	std::list<DrawableBase*> Drawables;
 	std::list<Woman> Womans;
 	std::list<Botch> Botchs;
 	std::list<Sweats> Sweats;
 	std::list<CharaButton> CharaButtons;
-	ReaZyu *reaZyu;
-	
+	void drawTimerString();
 };

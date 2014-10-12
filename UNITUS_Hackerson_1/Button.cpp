@@ -15,12 +15,12 @@ Button::~Button()
 }
 
 void Button::draw()
-{
-	LoadGraphScreen(Top.x,Top.y, GraphName, TRUE);
-	afterDraw();
-}
+{}
 
 void Button::update()
 {}
-void Button::afterDraw()
-{}
+
+Vector2 Button::getPosition()
+{
+	return (this->Bottom + this->Top)*0.5f;
+}
