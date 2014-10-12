@@ -9,3 +9,8 @@ Sweats::Sweats(BasicInput* input, Vector2 position) :Button(input,position,Vecto
 Sweats::~Sweats()
 {
 }
+void Sweats::update()
+{}
+
+void Sweats::afterDraw()
+{}

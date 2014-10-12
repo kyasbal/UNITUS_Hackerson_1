@@ -10,16 +10,17 @@ CharaButton::~CharaButton()
 {
 }
 
-void CharaButton::draw()
+void CharaButton::afterDraw()
 {	
 	DrawFormatString((int)Top.x, (int)Top.y, GetColor(255, 255, 0), GraphName);
 }
 
-void CharaButton::draw(TCHAR* str)
+void CharaButton::afterDraw(TCHAR* str)
 {
 	DrawFormatString((int)Top.x, (int)Top.y, GetColor(255, 255, 0), str);
 }
 
 void CharaButton::update()
 {
+
 }

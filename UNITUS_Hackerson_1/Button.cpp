@@ -15,7 +15,12 @@ Button::~Button()
 }
 
 void Button::draw()
-{}
+{
+	LoadGraphScreen(Top.x,Top.y, GraphName, TRUE);
+	afterDraw();
+}
 
 void Button::update()
+{}
+void Button::afterDraw()
 {}

@@ -13,9 +13,9 @@ GameScene::~GameScene()
 }
 void GameScene::init()
 {
-	ReaZyu *reaZyu = new ReaZyu(input,Vector2(375,310));
+   reaZyu = new ReaZyu(input,Vector2(375,310));
 }
 void GameScene::update()
 {
-	
+	reaZyu->draw();
 }

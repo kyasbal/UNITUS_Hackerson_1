@@ -65,27 +65,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="BasicInput.h">
-      <Filter>ソース ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="Button.h">
-      <Filter>ソース ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="GameModes.h">
-      <Filter>ソース ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="GameScene.h">
-      <Filter>ソース ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="MenuScene.h">
-      <Filter>ソース ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="Scene.h">
-      <Filter>ソース ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="Vector3.h">
-      <Filter>ソース ファイル</Filter>
-    </ClInclude>
     <ClInclude Include="DrawableBase.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
@@ -102,6 +81,27 @@
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
     <ClInclude Include="Botch.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector3.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuScene.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="GameScene.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="GameModes.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Button.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="BasicInput.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
   </ItemGroup>

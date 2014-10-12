@@ -9,3 +9,9 @@ Woman::Woman(BasicInput* input, Vector2 position) :Button(input, position, Vecto
 Woman::~Woman()
 {
 }
+
+void Woman::update()
+{}
+
+void Woman::afterDraw()
+{}

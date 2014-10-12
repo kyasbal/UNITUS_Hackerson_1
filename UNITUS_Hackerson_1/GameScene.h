@@ -20,5 +20,6 @@ private:
 	std::list<Botch> Botchs;
 	std::list<Sweats> Sweats;
 	std::list<CharaButton> CharaButtons;
+	ReaZyu *reaZyu;
 	
 };
