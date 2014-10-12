@@ -28,13 +28,13 @@ void MenuScene::update()
 {
 	LoadGraphScreen(0, 0, ".\\Resource\\img\\Win7.png", FALSE);
 	LoadGraphScreen(20, 500, ".\\Resource\\img\\logo.bmp", TRUE);
+	PlaySoundFile(".\\Resource\\BGM\\Frisky_Kitten.mp3", DX_PLAYTYPE_BACK);
 	//SetFontSize(50);
 	//SetFontThickness(9);
 	//DrawFormatString(600, 600, GetColor(255, 255, 0), "ƒŠƒA[–o–Å‘åìí");
 	
 	if ((input->clickInput & MOUSE_INPUT_LEFT) != 0){
 		SetBackgroundColor(230, 230, 230);
-		LoadGraphScreen(0, 0, ".\\Resource\\img\\Iwanna.jpg", TRUE);
 		gameModes->sceneMode = 1;
 	}
 }
