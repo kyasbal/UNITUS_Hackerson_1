@@ -48,16 +48,20 @@ void GameScene::update()
 	}
 	//Woman‚Ì¶¬
 	{
-		float timefromBegin = this->timeFromBegin;
-		timefromBegin /= 1000;
-		int m = (int)timefromBegin / 60;
-		timefromBegin -= m * 60;
-		int s = (int)timefromBegin;
-		Woman *woman = new Woman(input, Vector2(475+ 100 * cos(s), 310 + 100 * sin(s)));
-		Womans.push_back(*woman);
-		Drawables.push_back(woman);
+		if (GetNowCount() - lastWomanSpawn > 1000)
+		{
+			float timefromBegin = this->timeFromBegin;
+			timefromBegin /= 1000;
+			int m = (int)timefromBegin / 60;
+			timefromBegin -= m * 60;
+			int s = (int)timefromBegin;
+			Woman *woman = new Woman(input, Vector2(475 + 100 * cos(s), 310 + sin(s)), &Botchs);
+			{
+				Drawables.push_back(woman);
+			}
+			lastWomanSpawn = GetNowCount();
+		}
 	}
-
 }
 
 void GameScene::drawTimerString(){
