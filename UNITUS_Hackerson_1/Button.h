@@ -15,5 +15,7 @@ public:
 	Vector2 Bottom;
 	TCHAR* GraphName;
 	BasicInput* input;
+protected:
+	Vector2 getPosition();
 };
 
