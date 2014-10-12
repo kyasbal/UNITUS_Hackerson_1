@@ -3,7 +3,8 @@
 #include "GameModes.h"
 #include "MenuScene.h"
 #include "GameScene.h"
-#define SceneNumber 2
+#include "OverScene.h"
+#define SceneNumber 3
 
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
 {
@@ -21,6 +22,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	Scene *scene[SceneNumber];
 	scene[0] = new MenuScene(gameModes, input);
 	scene[1] = new GameScene(gameModes, input);
+	scene[2] = new OverScene(gameModes, input);
 
 	while (ScreenFlip() == 0 && ProcessMessage() == 0 && ClearDrawScreen() == 0)
 	{
