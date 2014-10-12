@@ -6,4 +6,6 @@ class Woman :
 public:
 	Woman(BasicInput* input, Vector2 position);
 	~Woman();
+	void update();
+	void afterDraw();
 };

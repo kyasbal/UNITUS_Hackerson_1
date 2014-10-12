@@ -9,8 +9,9 @@ class Button :public DrawableBase
 public:
 	Button(BasicInput* input, Vector2 positon, Vector2 graphPx, TCHAR* GraphName);
 	~Button();
-	virtual void draw();
-	virtual void update();
+	void draw();
+	virtual void update()=0;
+	virtual void afterDraw()=0;
 	Vector2 Top;
 	Vector2 Bottom;
 	TCHAR* GraphName;

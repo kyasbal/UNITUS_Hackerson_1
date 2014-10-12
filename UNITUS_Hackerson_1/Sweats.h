@@ -6,4 +6,6 @@ class Sweats :
 public:
 	Sweats(BasicInput* input, Vector2 positon);
 	~Sweats();
+	void update();
+	void afterDraw();
 };
