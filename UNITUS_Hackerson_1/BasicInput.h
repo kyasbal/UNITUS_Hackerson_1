@@ -7,17 +7,19 @@ public:
 	BasicInput();
 	~BasicInput();
 	void update();
-	Vector2 Mouse;
-	Vector2 MouseClick;
-	int mouseInput;
-	int mouseWheelRotVol;
-	char Buf[256];
+	Vector2 mouse;			//マウスの座標
+	Vector2 mouseMove;		//マウスの変化量ベクトル
+	Vector2 clickedMouse;	//最後にクリックした時のマウスの座標
+	int mouseInput;			//マウスの入力状態値
+	int clickInput;			//最後にクリックした時のマウスの入力状態値
+	int mouseWheelRotVol;	//マウス回転量
+	char Buf[256];			//キー入力
 };
 
 /*
-マウスの入力状態値を得ます。
-　戻り値を以下に示す定義値とＡＮＤ演算し、結果が０でなければそのボタンが押されている事になります。
+　マウスの入力状態値
 
+ 戻り値を以下に示す定義値とＡＮＤ演算し、結果が０でなければそのボタンが押されている事になります。
  MOUSE_INPUT_LEFT　　： マウス左ボタン
  MOUSE_INPUT_RIGHT　 ： マウス右ボタン
  MOUSE_INPUT_MIDDLE　： マウス中央ボタン

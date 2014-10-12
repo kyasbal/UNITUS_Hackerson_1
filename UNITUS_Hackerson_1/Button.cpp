@@ -16,5 +16,6 @@ Button::~Button()
 
 void Button::draw()
 {}
+
 void Button::update()
 {}

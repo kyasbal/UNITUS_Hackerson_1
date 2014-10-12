@@ -4,7 +4,7 @@
 #include "BasicInput.h"
 #include "Vector2.cpp"
 #include "DrawableBase.h"
-class Button:DrawableBase
+class Button : DrawableBase
 {
 public:
 	Button(BasicInput* input, Vector2 positon, Vector2 graphPx, TCHAR* GraphName);
