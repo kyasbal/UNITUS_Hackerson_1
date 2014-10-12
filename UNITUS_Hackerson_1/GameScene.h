@@ -14,6 +14,9 @@ public:
 	~GameScene();
 	void init();
 	void update();
+	float time;
+	float timeFromBegin;
+	float beginTime;
 private:
 	std::list<DrawableBase*> Drawables;
 	std::list<Woman> Womans;
